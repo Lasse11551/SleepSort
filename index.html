@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleep Sort</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <div class="container">
+<body><br>
+    <form>
+        <label for="inputNumbers">Indtast numre der skal sorteres</label><br>
+        <input type="number" name="inputNumbers" id="inputNumbers" required>
+        <button id="addButton">tilføj</button>
+    </form><br>
+    <div class="array-container"></div><br>
 
-    </div>
-    
+    <button id="startSort">Klar, Parat, Sov!</button><br>
+    <button id="clearButton">Ryd Alt</button><br>
+    <div class="loading-bars-container"></div>
+    <div class="sorted-array-container"><br>
+
+    </div><br>
+    <script src="script.js"></script>
 </body>
 </html>

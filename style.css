@@ -1,0 +1,90 @@
+
+.loading-bar-container {
+    width: 500px;
+    height: 3em;
+    background-color: #111;
+    border-radius: 1.5em;
+    color: white;
+   text-align: right;
+    
+}
+.loading-bar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff; /* Adjust text color */
+}
+
+
+.loading-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 1.5em;
+    transition: width 0.0s linear; /* Adjust the duration of the transition */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height of the body to full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f0f0f0; /* Adjust background color if needed */
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 80%; /* Adjust the width of the container */
+    max-width: 1200px; /* Add maximum width to the container */
+}
+
+button {
+    border-radius: 1em;
+}
+
+/* Apply styles to the array container */
+/* Apply styles to the array container */
+.array-container {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    gap: 1px; /* Adjust gap between cells */
+    border: 1px solid #ccc; /* Add border around the array container */
+    padding: 10px; /* Add padding around the array container */
+}
+
+/* Apply styles to the number spans */
+.array-container span {
+    display: inline-flex; /* Use inline-flex for each cell */
+    align-items: center;
+    justify-content: center;
+    min-width: 50px; /* Adjust width of each cell */
+    height: 50px; /* Adjust height of each cell */
+    border: 1px solid #ccc; /* Add border around each cell */
+    background-color: #f9f9f9; /* Add background color to each cell */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Add font weight */
+}
+
+.sorted-array-container {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    gap: 1px; /* Adjust gap between cells */
+    border: 1px solid #ccc; /* Add border around the array container */
+    padding: 10px; /* Add padding around the array container */
+}
+
+/* Apply styles to the number spans */
+.sorted-array-container span {
+    display: inline-flex; /* Use inline-flex for each cell */
+    align-items: center;
+    justify-content: center;
+    min-width: 50px; /* Adjust width of each cell */
+    height: 50px; /* Adjust height of each cell */
+    border: 1px solid #ccc; /* Add border around each cell */
+    background-color: #f9f9f9; /* Add background color to each cell */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Add font weight */
+}
+
