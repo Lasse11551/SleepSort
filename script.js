@@ -60,9 +60,10 @@ document.querySelector("#addButton").addEventListener("click", addNumber);
 
 // ------------- Model -----------------
 
+// oprettelse af loading bar:
 function createLoadingBars(arr) {
   let loadingBars = [];
-  let sleepContainer = document.querySelector(".sleep-container"); // Get loading bars container
+  let sleepContainer = document.querySelector(".sleep-container"); // finder sleepcontainer til placering af bars
   sleepContainer.innerHTML = "";
   
 
@@ -73,19 +74,20 @@ function createLoadingBars(arr) {
     let loadingBarContainer = document.createElement("div");
     loadingBarContainer.classList.add("loading-bar-container");
     
-    let loadingNumber = document.createElement("div"); // Create a div for the loading number
+    let loadingNumber = document.createElement("div"); 
     loadingNumber.classList.add("loading-bar-number");
-    loadingNumber.textContent = num; // Set the loading number text
-    /* loadingBarContainer.appendChild(loadingNumber); */ // Append the loading number to the loading bar container
+    loadingNumber.textContent = num; 
 
     let loadingBar = document.createElement("div");
     loadingBar.classList.add("loading-bar");
-    loadingBarContainer.appendChild(loadingBar); // Append the loading bar to the loading bar container
-    
-    sleepContainer.appendChild(loadingContainer); // Append the loading bar container to the loading bars container
+
+    sleepContainer.appendChild(loadingContainer); 
+
+    loadingBarContainer.appendChild(loadingBar); 
     
     loadingContainer.appendChild(loadingNumber)
     loadingContainer.appendChild(loadingBarContainer)
+
     loadingBars.push(loadingBar);
   }
 
@@ -93,7 +95,7 @@ function createLoadingBars(arr) {
 }
 
 
-  
+    // håndtere animationer af loading bars:
   function animateLoadingBar(loadingBar, totalTime, callback) {
     let startTime = performance.now();
      
@@ -115,9 +117,9 @@ function createLoadingBars(arr) {
   
   
   function sleepSort(arr) {
-    // Create an array to hold promises
+    
     let promises = [];
-    let sortedArr = []; // Use local sortedArr
+    let sortedArr = []; 
     let loadingBars = createLoadingBars(arr);
   
     for (let i = 0; i < arr.length; i++) {
@@ -133,11 +135,11 @@ function createLoadingBars(arr) {
         });
       });
   
-      // Add the promise to the array
+      // skubber promise ud i array
       promises.push(promise);
     }
   
-    // Wait for all promises to resolve
+  // venter på alle promises
     Promise.all(promises)
       .then(() => {
         console.log("Sorted Array:", sortedArr);
