@@ -41,8 +41,10 @@ function positionNumbers(num) {
 function clearArrayInput() {
   let throwUnsortedContainer = document.querySelector(".array-container");
   let throwSortedContainer = document.querySelector(".sorted-array-container");
+  let throwLoadingBarsContainer = document.querySelector(".loading-bars-container")
   throwUnsortedContainer.textContent = "";
   throwSortedContainer.textContent = "";
+  throwLoadingBarsContainer.textContent = ""
   sortedArr = [];
   console.log(sortedArr);
   inputArray = [];
@@ -57,31 +59,36 @@ document.querySelector("#addButton").addEventListener("click", addNumber);
 // ------------- Model -----------------
 
 function createLoadingBars(arr) {
-    let loadingBars = [];
-    let sortedArrayContainer = document.querySelector(".sorted-array-container");
-    sortedArrayContainer.innerHTML = "";
-  
-    for (let num of arr) {
-      let loadingBarContainer = document.createElement("div");
-      loadingBarContainer.classList.add("loading-bar-container");
-      let loadingBar = document.createElement("div");
-      loadingBar.classList.add("loading-bar");
-      loadingBarContainer.appendChild(loadingBar);
-      sortedArrayContainer.appendChild(loadingBarContainer);
-      let valueTextNode = document.createTextNode(num);
-      
-      loadingBar.appendChild(valueTextNode);
-      loadingBarContainer.appendChild(loadingBar);
-      sortedArrayContainer.appendChild(loadingBarContainer);
-      loadingBars.push(loadingBar);
-    }
-  
-    return loadingBars;
+  let loadingBars = [];
+  let loadingBarsContainer = document.querySelector(".loading-bars-container"); // Get loading bars container
+  loadingBarsContainer.innerHTML = "";
+
+  for (let num of arr) {
+    let loadingBarContainer = document.createElement("div");
+    loadingBarContainer.classList.add("loading-bar-container");
+    
+    let loadingNumber = document.createElement("div"); // Create a div for the loading number
+    loadingNumber.classList.add("loading-bar-number");
+    loadingNumber.textContent = num; // Set the loading number text
+    loadingBarsContainer.appendChild(loadingNumber); // Append the loading number to the loading bar container
+
+    let loadingBar = document.createElement("div");
+    loadingBar.classList.add("loading-bar");
+    loadingBarContainer.appendChild(loadingBar); // Append the loading bar to the loading bar container
+    
+    loadingBarsContainer.appendChild(loadingBarContainer); // Append the loading bar container to the loading bars container
+    
+    loadingBars.push(loadingBar);
   }
+
+  return loadingBars;
+}
+
+
   
   function animateLoadingBar(loadingBar, totalTime, callback) {
     let startTime = performance.now();
-    
+  
     function updateAnimation() {
       let currentTime = performance.now();
       let elapsedTime = currentTime - startTime;
@@ -90,12 +97,14 @@ function createLoadingBars(arr) {
       if (percentage > 0) {
         requestAnimationFrame(updateAnimation);
       } else {
+        loadingBar.parentNode.remove(); // Remove the loading bar container once animation is complete
         callback();
       }
     }
-    
+  
     requestAnimationFrame(updateAnimation);
   }
+  
   
   function sleepSort(arr) {
     // Create an array to hold promises
