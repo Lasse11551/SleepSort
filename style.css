@@ -6,12 +6,18 @@
     border-radius: 1.5em;
     color: white;
     text-align: right;
-    overflow: hidden; /* Ensure content doesn't overflow */
-    position: relative; /* Ensure absolute positioning of loading bar */
+    overflow: hidden; 
+    position: relative; 
 }
 .loading-bars-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.loading-container{
+    display:flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 .loading-bar {
@@ -96,3 +102,14 @@ button {
     font-size: 16px; /* Adjust font size */
     font-weight: bold; /* Add font weight */
 }
+h1 {
+    font-size: 3em; /* Adjust the font size */
+    color: #ff00ff; /* Set the text color to a bright pink */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+    background-image: linear-gradient(to right, #ff00ff, #00ffff); /* Add a gradient background */
+    -webkit-background-clip: text; /* Clip the text to the background */
+    -webkit-text-fill-color: transparent; /* Make the text transparent */
+    display: inline-block; /* Ensure the element behaves like a block element */
+    padding: 0.2em 0.5em; /* Add padding to the text */
+    border-radius: 10px; /* Add rounded corners */
+  }
