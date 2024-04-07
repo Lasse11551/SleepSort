@@ -43,13 +43,13 @@ function positionNumbers(num) {
 function clearArrayInput() {
   let throwUnsortedContainer = document.querySelector(".array-container");
   let throwSortedContainer = document.querySelector(".sorted-array-container");
-  let throwsleepContainer = document.querySelector(".loading-bars-container")
+  let throwsleepContainer = document.querySelector(".sleep-container")
   throwUnsortedContainer.textContent = "";
   throwSortedContainer.textContent = "";
   throwsleepContainer.textContent = ""
+  inputArray = [];
   sortedArr = [];
   console.log(sortedArr);
-  inputArray = [];
   console.log(inputArray);
   console.log("cleared data");
 }

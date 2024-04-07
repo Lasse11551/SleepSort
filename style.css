@@ -113,3 +113,7 @@ h1 {
     padding: 0.2em 0.5em; /* Add padding to the text */
     border-radius: 10px; /* Add rounded corners */
   }
+
+  input{
+    width: 85%;
+  }
